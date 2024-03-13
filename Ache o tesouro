@@ -1,0 +1,45 @@
+while True:
+    print('''
+         solid?                    or weed?
+        _________
+  ''')
+    print("Bem-vindx à High Island.")
+    print("Sua missão é achar a canga.")
+    escolha1 = input(
+        'Você está numa festinha à beira e precisa achar suas amigas com a plantinha. Você vê dois grandes grupos de pessoas, você se reúne com os que estão dançando ou os que estão lá fora curtindo a brisa do mar? Digite "dançar" ou "brisa".\n'
+    ).lower()
+
+    if escolha1 == 'brisa':
+        escolha2 = input(
+            'Você achou suas amigas, mas elas estão aproveitando o mar, sem a plantinha. Lembram você que está tudo guardado no quarto do hotel, a 3 minutos de distância. Você decide: "hotel" ou "ficar"? '
+        ).lower()
+        if escolha2 == "hotel":
+            escolha3 = input(
+                'Você chegou no quarto do hotel e está uma bagunça. Você procura na mala de rodinhas, na gaveta da cômoda ou na bolsa de mão? Digite "mala", "gaveta" ou "bolsa"'
+            ).lower()
+            if escolha3 == "mala":
+                escolha4 = input(
+                    'Parabéns, você achou a plantinha da cura! Mas olha só, do lado tem um bilhetinho que a Rita deixou, você quer "ler" ou "ignorar"?'
+                ).lower()
+                if escolha4 == "ler":
+                    print("Ei, presta atenção: eu amo você! s2")
+                elif escolha4 == "ignorar":
+                    print("Você é babaca")
+            elif escolha3 == "gaveta":
+                print("Nada disso, quem guardaria na gaveta? Tchau, tchau")
+            elif escolha3 == "bolsa":
+                print("Se lascou! A vida não é tão fácil assim. Tchau, tchau.")
+        elif escolha2 == "ficar":
+            print(
+                "Você decidiu ficar e aproveitar a brisa com suas amigas. Boa escolha! Tchau, tchau."
+            )
+        else:
+            print("Escolha inválida.")
+    else:
+        print('Perdeu, tchau, thau.')
+
+    jogar_novamente = input(
+        "Deseja jogar novamente? Digite 'sim' se quiser, ou qualquer outra coisa para sair.\n"
+    ).lower()
+    if jogar_novamente != 'sim':
+        break  # Sai do loop se a resposta não for 'sim'

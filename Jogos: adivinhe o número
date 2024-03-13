@@ -1,0 +1,43 @@
+from random import randint
+from art import logo
+
+LEVEL_FACIL = 10
+LEVEL_DIFICIL = 5
+
+def check_answer(guess, answer, turns):
+  """checks answer against guess. Returns the number of turns remaining."""
+  if guess > answer:
+    print("Muito alto.")
+    return turns - 1
+  elif guess < answer:
+    print("Muito baixo.")
+    return turns - 1
+  else:
+    print(f"Acertou! A reposta é {answer}.")
+
+#Make function to set difficulty.
+def set_difficulty():
+  level = input("Escolha a dificuldade. Digite 'fácil' ou 'difícil': ")
+  if level == "fácil":
+    return LEVEL_FACIL
+  else:
+    return LEVEL_DIFICIL
+def game():
+  print(logo)
+  #Choosing a random number between 1 and 100.
+  print("Bem vindo ao oráculo de números!")
+  print("Estou pensando em um número entre 1 and 100.")
+  answer = randint(1, 100)
+  print(f"A resposta correta é {answer}")
+  turns = set_difficulty()
+  guess = 0
+  while guess != answer:
+    print(f"Você tem {turns} de tentativas para adivinhar.")
+    guess = int(input("Faça uma tentativa: "))
+    turns = check_answer(guess, answer, turns)
+    if turns == 0:
+      print("Acabaram as chances. Perdeu.")
+      return
+    elif guess != answer:
+      print("Adivinhe de novo.")
+game()

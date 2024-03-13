@@ -1,0 +1,23 @@
+
+print("Bem-vinda ao *Quem vai pagar a conta?*")
+bill = float(input("Quanto deu o total? "))
+tip_response = input("Você vai pagar os 10%? (Sim ou Não) ")
+
+# Convert the response to uppercase to make it case-insensitive
+tip = tip_response.upper()
+
+people = int(input("Quantas pessoas vão pagar? "))
+
+# Initialize tip_as_percent
+tip_as_percent = 0
+
+if tip == "NÃO":
+    total_bill = bill
+else:
+    tip_as_percent = 0.10
+    total_bill = bill * (1 + tip_as_percent)
+
+bill_per_person = total_bill / people
+final_amount = round(bill_per_person, 2)
+
+print(f"Cada um deve pagar: {final_amount}")
